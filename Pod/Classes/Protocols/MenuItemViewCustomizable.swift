@@ -34,17 +34,20 @@ public struct MenuItemText {
     let text: String
     let color: UIColor
     let selectedColor: UIColor
+    var backgroundColor: UIColor? = nil
     let font: UIFont
     let selectedFont: UIFont
     
     public init(text: String = "Menu",
                 color: UIColor = UIColor.lightGray,
                 selectedColor: UIColor = UIColor.black,
+                backgroundColor: UIColor? = nil,
                 font: UIFont = UIFont.systemFont(ofSize: 16),
                 selectedFont: UIFont = UIFont.systemFont(ofSize: 16)) {
         self.text = text
         self.color = color
         self.selectedColor = selectedColor
+        self.backgroundColor = backgroundColor
         self.font = font
         self.selectedFont = selectedFont
     }

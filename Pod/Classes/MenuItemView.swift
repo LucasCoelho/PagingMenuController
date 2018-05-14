@@ -28,7 +28,9 @@ open class MenuItemView: UIView {
             if case .roundRect = menuOptions.focusMode {
                 backgroundColor = UIColor.clear
             } else {
-                backgroundColor = isSelected ? menuOptions.selectedBackgroundColor : menuOptions.backgroundColor
+                if let backgroundColor = menuOptions.backgroundColor {
+                    self.backgroundColor = isSelected ? menuOptions.selectedBackgroundColor : backgroundColor
+                }
             }
             
             switch menuItemOptions.displayMode {
@@ -161,6 +163,7 @@ open class MenuItemView: UIView {
     }
     
     fileprivate func setupLabel(_ label: UILabel, text: MenuItemText) {
+        backgroundColor = text.backgroundColor
         label.text = text.text
         updateLabel(label, text: text)
         addSubview(label)

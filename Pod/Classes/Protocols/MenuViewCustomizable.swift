@@ -9,7 +9,7 @@
 import Foundation
 
 public protocol MenuViewCustomizable {
-    var backgroundColor: UIColor { get }
+    var backgroundColor: UIColor? { get }
     var selectedBackgroundColor: UIColor { get }
     var height: CGFloat { get }
     var animationDuration: TimeInterval { get }
@@ -24,8 +24,8 @@ public protocol MenuViewCustomizable {
 }
 
 public extension MenuViewCustomizable {
-    var backgroundColor: UIColor {
-        return UIColor.white
+    var backgroundColor: UIColor? {
+        return nil
     }
     var selectedBackgroundColor: UIColor {
         return UIColor.white
